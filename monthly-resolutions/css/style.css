@@ -1,0 +1,113 @@
+/* 
+Project Name: Monthly Resolutions
+Client: One Month
+Author: Christopher Castig | @castig
+*/
+
+/*----------------------------------------------------------------------------- 
+01=BASE   
+-----------------------------------------------------------------------------*/
+
+/* Box Model Hack */
+* {
+  -moz-box-sizing: border-box; /* Firexfox */
+  -webkit-box-sizing: border-box; /* Safari/Chrome/iOS/Android */
+  box-sizing: border-box; /* IE */
+}
+
+.clear {
+  clear: both;
+}
+
+body {
+  background: url('../images/notebook.png'); /* add a fallback color of #d6d6d6 */
+  color: #000000;
+  font-family: 'Lato', sans-serif;
+  line-height: 1.7; /* line-height is unit-less */
+  font-size: 100%;
+}
+
+.link {
+  text-decoration: none;
+  color: #eb5b41;
+}
+
+/*----------------------------------------------------------------------------- 
+02=LAYOUT  
+-----------------------------------------------------------------------------*/
+
+.container {
+  width: 80%;
+  min-width: 320px;
+  margin: 0 auto;
+}
+
+.main {
+  width: 65%;
+  margin-bottom: 1rem;
+}
+.sidebar {
+  width: 33.5%;
+  margin-left: 1.5%;
+
+  border-left: 0.2rem solid #bbb;
+  border-bottom: 0.2rem solid #bbb;
+}
+
+.main,
+.sidebar {
+  float: left;
+  padding: 1.5rem;
+  background-color: white;
+}
+
+/*----------------------------------------------------------------------------- 
+04=HEADER  
+-----------------------------------------------------------------------------*/
+
+.header-heading {
+  font-size: 3.5rem;
+  line-height: 1;
+  margin-bottom: 0;
+}
+
+.header-desc {
+  margin-top: 0;
+}
+
+/*----------------------------------------------------------------------------- 
+05=MAIN  
+-----------------------------------------------------------------------------*/
+
+.resolution-image {
+  width: 100%;
+}
+
+.resolution-footer {
+  border-top: 1px solid #bbb;
+  color: grey;
+  padding: 1rem 0;
+}
+
+.resolution-heading {
+  font-size: 2.5rem;
+  margin: 0;
+}
+.resolution {
+  margin-bottom: 1.5rem;
+}
+
+/*----------------------------------------------------------------------------- 
+06=SIDEBAR  
+-----------------------------------------------------------------------------*/
+
+.profile-image {
+  border-radius: 50%;
+}
+
+.day-quote {
+  font-style: italic;
+  border-left: 0.3rem solid #bbb;
+  margin-left: 0;
+  padding-left: 1rem;
+}
