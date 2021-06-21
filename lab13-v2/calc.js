@@ -9,7 +9,7 @@ const appendExpressionEl = v => {
   expressionEl.value = expressionValue
 }
 const clearScreen = () => {
-  expressionValue = expressionEl.value = resultEl.innerText = ''
+  expressionValue = result = expressionEl.value = resultEl.innerText = ''
 }
 
 table.addEventListener('click', e => {
@@ -20,6 +20,7 @@ table.addEventListener('click', e => {
     else if (buttonText == 'mod') appendExpressionEl('%')
     else if (buttonText == 'C') clearScreen()
     else if (buttonText == '=') {
+      expressionValue = expressionEl.value
       try {
         result = eval(expressionValue)
       } catch (error) {
