@@ -1,18 +1,14 @@
 const expressionEl = document.getElementById('expression'),
   resultEl = document.getElementById('result'),
   table = document.getElementById('buttons')
-let expressionValue = '',
-  result
+let expressionValue = ''
 
 const appendExpressionEl = v => {
   expressionValue += v
-  expressionEl.innerText = expressionValue
+  expressionEl.value = expressionValue
 }
 const clearScreen = () => {
-  expressionValue = ''
-  result = ''
-  expressionEl.innerText = expressionValue
-  resultEl.innerText = result
+  expressionValue = expressionEl.innerText = resultEl.innerText = ''
 }
 
 table.addEventListener('click', e => {
@@ -20,21 +16,22 @@ table.addEventListener('click', e => {
     buttonText = e.target.innerText
     if (buttonText == 'x') {
       appendExpressionEl('*')
-    } else if (buttonText == '+') {
+    } else if (buttonText == '÷') {
       appendExpressionEl('/')
     } else if (buttonText == 'mod') {
       appendExpressionEl('%')
     } else if (buttonText == 'C') {
       clearScreen()
     } else if (buttonText == '=') {
-      resultEl.innerText = eval(expressionValue)
+      try {
+        resultEl.innerText = eval(expressionValue)
+      } catch (error) {
+        Android.showToast('¡Ingrese una expresión válida!')
+        Android.incrErrorCount()
+        clearScreen()
+      }
     } else {
       appendExpressionEl(buttonText)
     }
   }
 })
-
-window.onerror = () => {
-  Android.toastError('¡Ingrese una expresión válida!')
-  clearScreen()
-}
